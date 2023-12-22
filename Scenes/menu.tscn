@@ -1,0 +1,209 @@
+[gd_scene load_steps=10 format=3 uid="uid://6xkybdeqkwil"]
+
+[ext_resource type="Script" path="res://Scripts/Start.gd" id="1_lys5i"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="2_8axwn"]
+[ext_resource type="Script" path="res://Scripts/Quit.gd" id="2_kub3j"]
+[ext_resource type="Script" path="res://Scripts/Fullscreen.gd" id="4_vscde"]
+[ext_resource type="Script" path="res://Scripts/level1.gd" id="5_a2r8q"]
+[ext_resource type="Texture2D" uid="uid://bia5el7gjx407" path="res://Assets/PlayerSprite.png" id="6_2chs5"]
+[ext_resource type="Script" path="res://Scenes/level1Completed.gd" id="7_xtms0"]
+
+[sub_resource type="GDScript" id="GDScript_au8p2"]
+script/source = "extends Button
+@onready var main_menu = $\"../../MainMenu\"
+@onready var settings_menu = $\"..\"
+
+
+func _on_pressed():
+	main_menu.visible = true
+	settings_menu.visible = false
+"
+
+[sub_resource type="GDScript" id="GDScript_jy6sl"]
+script/source = "extends Button
+@onready var main_menu = $\"../../MainMenu\"
+@onready var settings_menu = $\"..\"
+@onready var level_select = $\"../../LevelSelect\"
+
+
+func _on_pressed():
+	main_menu.visible = true
+	level_select.visible = false
+"
+
+[node name="Menu" type="Node2D"]
+
+[node name="MainMenu" type="Node2D" parent="."]
+
+[node name="Start" type="Button" parent="MainMenu"]
+offset_left = 407.0
+offset_top = 136.0
+offset_right = 693.0
+offset_bottom = 247.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start"
+script = ExtResource("1_lys5i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="MainMenu"]
+offset_left = 406.0
+offset_top = 269.0
+offset_right = 692.0
+offset_bottom = 380.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Settings"
+script = ExtResource("2_8axwn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="MainMenu"]
+offset_left = 403.0
+offset_top = 400.0
+offset_right = 689.0
+offset_bottom = 511.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"
+script = ExtResource("2_kub3j")
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsMenu" type="Node2D" parent="."]
+visible = false
+
+[node name="Fullscreen" type="CheckButton" parent="SettingsMenu"]
+offset_left = 403.0
+offset_top = 349.0
+offset_right = 570.0
+offset_bottom = 380.0
+text = "Fullscreen"
+script = ExtResource("4_vscde")
+
+[node name="BackToMain" type="Button" parent="SettingsMenu"]
+offset_left = 403.0
+offset_top = 400.0
+offset_right = 689.0
+offset_bottom = 511.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+script = SubResource("GDScript_au8p2")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSelect" type="Node2D" parent="."]
+visible = false
+
+[node name="level1" type="Button" parent="LevelSelect"]
+offset_left = 399.0
+offset_top = 173.0
+offset_right = 449.0
+offset_bottom = 223.0
+size_flags_vertical = 4
+text = "1"
+script = ExtResource("5_a2r8q")
+
+[node name="level1Completed" type="Sprite2D" parent="LevelSelect/level1"]
+visible = false
+position = Vector2(44, 50)
+texture = ExtResource("6_2chs5")
+script = ExtResource("7_xtms0")
+
+[node name="level2" type="Button" parent="LevelSelect"]
+offset_left = 459.0
+offset_top = 173.0
+offset_right = 509.0
+offset_bottom = 223.0
+size_flags_vertical = 4
+text = "2"
+
+[node name="level3" type="Button" parent="LevelSelect"]
+offset_left = 519.0
+offset_top = 173.0
+offset_right = 569.0
+offset_bottom = 223.0
+size_flags_vertical = 4
+text = "3"
+
+[node name="level4" type="Button" parent="LevelSelect"]
+offset_left = 579.0
+offset_top = 173.0
+offset_right = 629.0
+offset_bottom = 223.0
+size_flags_vertical = 4
+text = "4"
+
+[node name="level5" type="Button" parent="LevelSelect"]
+offset_left = 639.0
+offset_top = 173.0
+offset_right = 689.0
+offset_bottom = 223.0
+size_flags_vertical = 4
+text = "5"
+
+[node name="level6" type="Button" parent="LevelSelect"]
+offset_left = 399.0
+offset_top = 248.0
+offset_right = 449.0
+offset_bottom = 298.0
+size_flags_vertical = 4
+text = "6"
+
+[node name="level7" type="Button" parent="LevelSelect"]
+offset_left = 459.0
+offset_top = 248.0
+offset_right = 509.0
+offset_bottom = 298.0
+size_flags_vertical = 4
+text = "7"
+
+[node name="level8" type="Button" parent="LevelSelect"]
+offset_left = 519.0
+offset_top = 248.0
+offset_right = 569.0
+offset_bottom = 298.0
+size_flags_vertical = 4
+text = "8"
+
+[node name="level9" type="Button" parent="LevelSelect"]
+offset_left = 579.0
+offset_top = 248.0
+offset_right = 629.0
+offset_bottom = 298.0
+size_flags_vertical = 4
+text = "9"
+
+[node name="level10" type="Button" parent="LevelSelect"]
+offset_left = 639.0
+offset_top = 248.0
+offset_right = 689.0
+offset_bottom = 298.0
+size_flags_vertical = 4
+text = "10"
+
+[node name="BackToMain2" type="Button" parent="LevelSelect"]
+offset_left = 403.0
+offset_top = 400.0
+offset_right = 689.0
+offset_bottom = 511.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+script = SubResource("GDScript_jy6sl")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MainMenu/Start" to="MainMenu/Start" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="MainMenu/Settings" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="MainMenu/Quit" method="_on_pressed"]
+[connection signal="toggled" from="SettingsMenu/Fullscreen" to="SettingsMenu/Fullscreen" method="_on_toggled"]
+[connection signal="pressed" from="SettingsMenu/BackToMain" to="SettingsMenu/BackToMain" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/level1" to="LevelSelect/level1" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/level2" to="LevelSelect/level1" method="_on_level_2_pressed"]
+[connection signal="pressed" from="LevelSelect/level3" to="LevelSelect/level1" method="_on_level_3_pressed"]
+[connection signal="pressed" from="LevelSelect/level4" to="LevelSelect/level1" method="_on_level_4_pressed"]
+[connection signal="pressed" from="LevelSelect/level5" to="LevelSelect/level1" method="_on_level_5_pressed"]
+[connection signal="pressed" from="LevelSelect/level6" to="LevelSelect/level1" method="_on_level_6_pressed"]
+[connection signal="pressed" from="LevelSelect/level7" to="LevelSelect/level1" method="_on_level_7_pressed"]
+[connection signal="pressed" from="LevelSelect/level8" to="LevelSelect/level1" method="_on_level_8_pressed"]
+[connection signal="pressed" from="LevelSelect/level9" to="LevelSelect/level1" method="_on_level_9_pressed"]
+[connection signal="pressed" from="LevelSelect/level10" to="LevelSelect/level1" method="_on_level_10_pressed"]
+[connection signal="pressed" from="LevelSelect/BackToMain2" to="LevelSelect/BackToMain2" method="_on_pressed"]

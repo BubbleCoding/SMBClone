@@ -19,7 +19,7 @@ func _physics_process(delta):
 		currentSpeed = sprintSpeed
 	else:
 		currentSpeed = speed
-	if !is_on_floor() and !is_on_wall():
+	if !is_on_floor() and !touching_wall():
 		if Input.is_action_pressed("left") and velocity.x > -currentSpeed:
 			velocity.x += -10
 		elif Input.is_action_pressed("right") and velocity.x < currentSpeed:
@@ -34,7 +34,7 @@ func _physics_process(delta):
 			velocity.x = currentSpeed
 		else:
 			velocity.x = lerp(velocity.x, 0.0, 0.1)
-	if ray_right.is_colliding() or ray_left.is_colliding():
+	if touching_wall() and !is_on_floor():
 		velocity.y += delta * gravity
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jumpSpeed
@@ -49,3 +49,9 @@ func _physics_process(delta):
 func death():
 	position = spawnPosition
 	velocity = Vector2(0,0)
+
+func touching_wall():
+	if ray_right.is_colliding() or ray_left.is_colliding():
+		return true
+	else:
+		return false
