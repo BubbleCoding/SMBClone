@@ -1,13 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6imn3yvqdsra"]
+[gd_scene load_steps=10 format=3 uid="uid://c6imn3yvqdsra"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_kax3s"]
 [ext_resource type="Texture2D" uid="uid://dbj8rfk4iskfj" path="res://Assets/TileSetColors.png" id="1_r7h68"]
 [ext_resource type="PackedScene" uid="uid://wrey78dowih2" path="res://Scenes/player.tscn" id="2_vmnn4"]
 [ext_resource type="Texture2D" uid="uid://ctpulsoevw6w8" path="res://icon.svg" id="3_83vcn"]
 [ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="3_jb1dm"]
-[ext_resource type="Script" path="res://Scenes/Levels/Sprite2D.gd" id="6_6ecvq"]
-[ext_resource type="Script" path="res://Scenes/Levels/Area2D2.gd" id="6_irw2w"]
-[ext_resource type="PackedScene" uid="uid://bdtqckkiw6wux" path="res://Scenes/in_game_menu.tscn" id="8_tb45s"]
+[ext_resource type="PackedScene" uid="uid://bdtqckkiw6wux" path="res://Scenes/in_game_menu.tscn" id="6_sjtet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0mdg"]
 texture = ExtResource("1_r7h68")
@@ -44,9 +42,6 @@ sources/0 = SubResource("TileSetAtlasSource_m0mdg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qtst"]
 size = Vector2(129, 129)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yed3q"]
-size = Vector2(37, 38)
-
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_kax3s")
 
@@ -70,21 +65,6 @@ shape = SubResource("RectangleShape2D_6qtst")
 position = Vector2(-0.5, 0.5)
 texture = ExtResource("3_83vcn")
 
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(299, 504)
-script = ExtResource("6_irw2w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-15.5, -14)
-shape = SubResource("RectangleShape2D_yed3q")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2/CollisionShape2D"]
-scale = Vector2(0.28125, 0.28125)
-texture = ExtResource("3_83vcn")
-script = ExtResource("6_6ecvq")
-
-[node name="inGameMenu" parent="." instance=ExtResource("8_tb45s")]
-position = Vector2(287, 413)
+[node name="inGameMenu" parent="." instance=ExtResource("6_sjtet")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

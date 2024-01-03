@@ -22,6 +22,8 @@ func _on_close_pressed():
 	in_game_menu.visible = false
 
 func _process(delta):
-	var middle = get_canvas_transform()
-	set_transform(middle)
+	pass
+	#var middle = camera_2d.get_screen_center_position()
+	#print(middle)
+	#set_transform(Transform2D(Vector2(1, 0), Vector2(0, 1),Vector2(100,0)))
 

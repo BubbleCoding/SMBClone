@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6imn3yvqdsra"]
+[gd_scene load_steps=11 format=3 uid="uid://c6imn3yvqdsra"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_kax3s"]
 [ext_resource type="Texture2D" uid="uid://dbj8rfk4iskfj" path="res://Assets/TileSetColors.png" id="1_r7h68"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ctpulsoevw6w8" path="res://icon.svg" id="3_83vcn"]
 [ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="3_jb1dm"]
 [ext_resource type="Script" path="res://Scenes/Levels/Sprite2D.gd" id="6_6ecvq"]
-[ext_resource type="Script" path="res://Scenes/Levels/Area2D2.gd" id="6_irw2w"]
-[ext_resource type="PackedScene" uid="uid://bdtqckkiw6wux" path="res://Scenes/in_game_menu.tscn" id="8_tb45s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0mdg"]
 texture = ExtResource("1_r7h68")
@@ -72,7 +70,6 @@ texture = ExtResource("3_83vcn")
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(299, 504)
-script = ExtResource("6_irw2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-15.5, -14)
@@ -83,8 +80,4 @@ scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("3_83vcn")
 script = ExtResource("6_6ecvq")
 
-[node name="inGameMenu" parent="." instance=ExtResource("8_tb45s")]
-position = Vector2(287, 413)
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

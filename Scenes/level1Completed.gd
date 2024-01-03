@@ -4,5 +4,5 @@ extends Sprite2D
 
 
 func _ready():
-	if Save.lvl1comp == true:
+	if Save.lvl1coll == true:
 		level_1_completed.visible = true

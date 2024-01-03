@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6xkybdeqkwil"]
+[gd_scene load_steps=11 format=3 uid="uid://6xkybdeqkwil"]
 
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_lys5i"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="2_8axwn"]
@@ -19,6 +19,17 @@ func _on_pressed():
 	settings_menu.visible = false
 "
 
+[sub_resource type="GDScript" id="GDScript_j4kmq"]
+script/source = "extends Sprite2D
+@onready var level_1_completed = $\".\"
+
+
+
+func _ready():
+	if Save.lvl1comp == true:
+		level_1_completed.visible = true
+"
+
 [sub_resource type="GDScript" id="GDScript_jy6sl"]
 script/source = "extends Button
 @onready var main_menu = $\"../../MainMenu\"
@@ -34,6 +45,7 @@ func _on_pressed():
 [node name="Menu" type="Node2D"]
 
 [node name="MainMenu" type="Node2D" parent="."]
+visible = false
 
 [node name="Start" type="Button" parent="MainMenu"]
 offset_left = 407.0
@@ -91,7 +103,6 @@ script = SubResource("GDScript_au8p2")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelSelect" type="Node2D" parent="."]
-visible = false
 
 [node name="level1" type="Button" parent="LevelSelect"]
 offset_left = 399.0
@@ -105,6 +116,11 @@ script = ExtResource("5_a2r8q")
 [node name="level1Completed" type="Sprite2D" parent="LevelSelect/level1"]
 visible = false
 position = Vector2(44, 50)
+texture = ExtResource("6_2chs5")
+script = SubResource("GDScript_j4kmq")
+
+[node name="level1Completed2" type="Sprite2D" parent="LevelSelect/level1"]
+position = Vector2(-3, 49)
 texture = ExtResource("6_2chs5")
 script = ExtResource("7_xtms0")
 

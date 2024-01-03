@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://f7n2jj4wwhwd"]
+[gd_scene load_steps=6 format=3 uid="uid://f7n2jj4wwhwd"]
 
 [ext_resource type="Texture2D" uid="uid://dbj8rfk4iskfj" path="res://Assets/TileSetColors.png" id="1_aix4i"]
 [ext_resource type="PackedScene" uid="uid://wrey78dowih2" path="res://Scenes/player.tscn" id="2_d8sq5"]
+[ext_resource type="PackedScene" uid="uid://bdtqckkiw6wux" path="res://Scenes/in_game_menu.tscn" id="3_4m7vl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0mdg"]
 texture = ExtResource("1_aix4i")
@@ -44,3 +45,6 @@ layer_0/tile_data = PackedInt32Array(1638400, 65536, 1, 1638401, 65536, 1, 16384
 
 [node name="Player" parent="." instance=ExtResource("2_d8sq5")]
 position = Vector2(96, 220)
+
+[node name="inGameMenu" parent="." instance=ExtResource("3_4m7vl")]
+position = Vector2(290, 166)

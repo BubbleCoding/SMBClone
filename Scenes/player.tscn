@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wrey78dowih2"]
+[gd_scene load_steps=4 format=3 uid="uid://wrey78dowih2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_65k2c"]
 [ext_resource type="Texture2D" uid="uid://bia5el7gjx407" path="res://Assets/PlayerSprite.png" id="2_n62it"]
-[ext_resource type="PackedScene" uid="uid://bdtqckkiw6wux" path="res://Scenes/in_game_menu.tscn" id="3_w05mg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eia3r"]
 
@@ -24,5 +23,3 @@ target_position = Vector2(-17, 0)
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-
-[node name="inGameMenu" parent="Camera2D" instance=ExtResource("3_w05mg")]
