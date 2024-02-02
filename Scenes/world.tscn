@@ -54,4 +54,5 @@ position = Vector2(511, 191)
 position = Vector2(523, 406)
 
 [node name="inGameMenu" parent="." instance=ExtResource("4_deu8l")]
+visible = false
 position = Vector2(0, 1)

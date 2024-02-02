@@ -120,6 +120,7 @@ texture = ExtResource("6_2chs5")
 script = SubResource("GDScript_j4kmq")
 
 [node name="level1Completed2" type="Sprite2D" parent="LevelSelect/level1"]
+visible = false
 position = Vector2(-3, 49)
 texture = ExtResource("6_2chs5")
 script = ExtResource("7_xtms0")

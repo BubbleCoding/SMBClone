@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkkc2yfkgwa8y"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="1_dc2kt"]
+[ext_resource type="Texture2D" uid="uid://ctpulsoevw6w8" path="res://icon.svg" id="2_hox8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qtst"]
+size = Vector2(129, 129)
+
+[node name="Goal" type="Area2D"]
+position = Vector2(82, 333)
+script = ExtResource("1_dc2kt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_6qtst")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-0.5, 0.5)
+texture = ExtResource("2_hox8e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
